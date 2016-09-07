@@ -1,6 +1,7 @@
-ample_RoR
+#sample_RoR
 
 pt.1
+
 rails new sample_RoR -d mysql
 cd sample_RoR
 rails g model user name:string email:string password_digest:string
@@ -19,6 +20,7 @@ USE sample_RoR_development;
 select * from users;
 
 pt.2
+
 root to: 'home#show'
 get '/signup' => 'users#new'
 post '/users' => 'users#create'
@@ -50,6 +52,7 @@ has_secure_password
 
 
 pt.3
+
 def create
   user = User.find_by_email(params[:email])
   # if the user exists AND the password entered is correct
@@ -74,6 +77,7 @@ password:<%= password_field_tag :password %>
 
 
 pt.4
+
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -129,4 +133,3 @@ UserMailer.welcome_email(user).deliver
 
 Homework -
 use Pony app to deliver emails
-
