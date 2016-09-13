@@ -1,6 +1,6 @@
-#sample_RoR
+#sample_RoR_pt1
 
-pt.1
+pt.1 - NEW PROJECT
 
 rails new sample_RoR -d mysql
 cd sample_RoR
@@ -19,7 +19,7 @@ SHOW DATABASES;
 USE sample_RoR_development;
 select * from users;
 
-pt.2
+pt.2 - LOGIN/SIGNUP
 
 root to: 'home#show'
 get '/signup' => 'users#new'
@@ -51,7 +51,7 @@ end
 has_secure_password
 
 
-pt.3
+pt.3 - LOGIN/SIGNUP LOGIC
 
 def create
   user = User.find_by_email(params[:email])
@@ -76,7 +76,7 @@ password:<%= password_field_tag :password %>
 <% end %>
 
 
-pt.4
+pt.4 - APPLICATION LOGIC
 
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
@@ -99,7 +99,7 @@ end
   <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %>
 
-pt.5
+pt.5 - MAILERS
 
 mailers/user_mailer.rb
 class UserMailer < ActionMailer::Base
@@ -128,8 +128,3 @@ views/user_mailer/welcome_email.html.erb
 </html>
 
 UserMailer.welcome_email(user).deliver
-
-
-
-Homework -
-use Pony app to deliver emails
